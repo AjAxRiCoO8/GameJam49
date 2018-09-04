@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Empty : MonoBehaviour {
+public class GameManager: MonoBehaviour {
+
+    // Player
+    [SerializeField]
+    Character player;
 
 	// Use this for initialization
 	void Start () {
