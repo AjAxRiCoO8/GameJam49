@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 8934163}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,6 +144,8 @@ MonoBehaviour:
   health: 10.8
   stamina: 21.7
   strength: 35.4
+  agility: 0
+  gp: 0
 --- !u!4 &8934162
 Transform:
   m_ObjectHideFlags: 0

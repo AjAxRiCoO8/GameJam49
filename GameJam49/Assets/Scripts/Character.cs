@@ -16,11 +16,24 @@ public class Character : MonoBehaviour {
     [Range(0, 100)]
     public float strength;
 
+    [SerializeField]
+    [Range(0, 100)]
+    public float agility;
+
+    public int gp;
+
     // Inventory ?
 
-	// Use this for initialization
-	void Start () {
-		
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    // Use this for initialization
+    void Start () {
+        gp = 150;
+        health = 70 + (strength*10);
+        stamina = 20 + (agility * 10);
 	}
 	
 	// Update is called once per frame
