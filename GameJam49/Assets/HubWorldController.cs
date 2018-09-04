@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class HubWorldController : MonoBehaviour
 {
+    UIController uiController;
 
+    string switchSceneName;
     //public Activities tapActivity;
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start ()
+	{
+	    uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +24,15 @@ public class HubWorldController : MonoBehaviour
 	    TouchInput();
 
 	}
+
+    void FixedUpdate()
+    {
+        // Checks if fader animation has completed and player clicked on a button
+        if (!uiController.fadeInAction && switchSceneName != null)
+        {
+            SceneManager.LoadScene(switchSceneName);
+        }
+    }
 
     void TouchInput()
     {
@@ -34,9 +47,19 @@ public class HubWorldController : MonoBehaviour
         {
             case Activities.Fighting:
                 //Add scene on top of this scene
-                SceneManager.LoadScene(1);
+                uiController.fadeInAction = true;
+                switchSceneName = "FightScene";
                 break;
             case Activities.Training:
+                //Add scene on top of this scene
+                break;
+            case Activities.Exploring:
+                //Add scene on top of this scene
+                break;
+            case Activities.Fishing:
+                //Add scene on top of this scene
+                break;
+            case Activities.Shopping:
                 //Add scene on top of this scene
                 break;
         }

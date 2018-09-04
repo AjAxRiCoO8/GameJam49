@@ -6,7 +6,7 @@ namespace Enums
     // Hub world related
     public enum Activities
     {
-        None, Fighting, Training
+        None, Fighting, Training, Fishing, Shopping, Exploring
     }
 
     // Fight related 
