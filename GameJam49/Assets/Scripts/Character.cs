@@ -20,7 +20,7 @@ public class Character : MonoBehaviour {
     [Range(0, 100)]
     public float agility;
 
-    public int gp;
+    public string gp { get; internal set; }
 
     // Inventory ?
 
@@ -31,7 +31,6 @@ public class Character : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        gp = 150;
         health = 70 + (strength*10);
         stamina = 20 + (agility * 10);
 	}
