@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HubWorldController : MonoBehaviour
 {
     UIController uiController;
+    private GameObject shop;
 
     string switchSceneName;
     //public Activities tapActivity;
@@ -14,8 +15,9 @@ public class HubWorldController : MonoBehaviour
     void Start ()
 	{
 	    uiController = GameObject.Find("Canvas").GetComponent<UIController>();
-
-	}
+        shop = GameObject.Find("Shop");
+        shop.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -48,7 +50,7 @@ public class HubWorldController : MonoBehaviour
             case Activities.Fighting:
                 //Add scene on top of this scene
                 uiController.fadeInAction = true;
-                switchSceneName = "FightScene";
+                //switchSceneName = "Fightscene";
                 break;
             case Activities.Training:
                 //Add scene on top of this scene
@@ -61,6 +63,7 @@ public class HubWorldController : MonoBehaviour
                 break;
             case Activities.Shopping:
                 //Add scene on top of this scene
+                shop.SetActive(true);
                 break;
         }
         // Reset for the next tap
