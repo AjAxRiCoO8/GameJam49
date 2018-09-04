@@ -10,6 +10,8 @@ enum FightingOption
 
 public class FightingManager : MonoBehaviour {
 
+    public GameObject canvas;
+
     [SerializeField]
     List<GameObject> attackMiniGames;
 

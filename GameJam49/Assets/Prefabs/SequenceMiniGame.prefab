@@ -52,6 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73a605a3e30e1f418b9fc187d4f1054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  miniGame: {fileID: 0}
+  sequenceButton: {fileID: 1253070760213924, guid: 77896434dc03f9340883695ef49e85e4,
+    type: 2}
+  verticalBoundaries: {x: 0, y: 1080}
+  horizontalBoundaries: {x: 960, y: 1920}
+  buttonSpread: 20
   baseValue: 5
 --- !u!114 &114909134564895890
 MonoBehaviour:
@@ -64,4 +70,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e5736608efbb646be68e9c257cac60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   rules: {fileID: 114614170003099942}

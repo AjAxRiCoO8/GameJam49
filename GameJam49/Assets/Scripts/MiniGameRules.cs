@@ -12,6 +12,7 @@ public abstract class MiniGameRules : MonoBehaviour {
 
     float score;
 
+    [ContextMenu("Generate MiniGame")]
     public abstract void GenerateMiniGame(GameManager manager);
 
     public void StartMiniGame()

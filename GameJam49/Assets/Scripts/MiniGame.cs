@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MiniGame : MonoBehaviour {
 
+    public GameObject canvas;
+
     [SerializeField]
     MiniGameRules rules;
 
@@ -18,7 +20,7 @@ public class MiniGame : MonoBehaviour {
     // Is responsible for showing the minigame window.
     public void ShowMiniGame(GameManager manager)
     {
-        // Make window visible
+        canvas.SetActive(true);
     
         rules.GenerateMiniGame(manager);
 
@@ -31,6 +33,6 @@ public class MiniGame : MonoBehaviour {
     {
         float score = rules.EndMiniGame();
 
-        // Hide Window
+        canvas.SetActive(false);
     }
 }
