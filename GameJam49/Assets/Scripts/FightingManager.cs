@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager: MonoBehaviour {
+enum FightingOption
+{
+    Attack,
+    Defend
+}
 
-    // Player
-    [SerializeField]
-    Character player;
+public class FightingManager : MonoBehaviour {
 
     [SerializeField]
-    FightingManager fightingManager;
+    List<GameObject> attackMiniGames;
+
+    List<GameObject> defenseMiniGames;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +24,4 @@ public class GameManager: MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public Character Player
-    {
-        get { return player; }
-    }
 }
