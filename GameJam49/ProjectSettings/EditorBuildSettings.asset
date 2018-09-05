@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Enemies.unity
     guid: 116a9d797a610b644a5d706a58f8310e
+  - enabled: 1
+    path: Assets/_Scenes/MiniGames BirdTest.unity
+    guid: 5fc325348a83a1b4dae891394d19d67d
   m_configObjects: {}
