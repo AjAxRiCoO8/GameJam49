@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public bool showButtons;
     public Text hpText,staText,strText;
     Character characterController;
+    GameObject buttonGroup;
 
     //Fader
     Image blackFade;
@@ -25,8 +26,19 @@ public class UIController : MonoBehaviour
 	{
 	    characterController = GameObject.Find("Player").GetComponent<Character>();
 	    blackFade = GameObject.Find("BlackFade").GetComponent<Image>();
-	    blackFade.enabled = false;
+	    buttonGroup = GameObject.Find("Buttons");
+
+        blackFade.enabled = false;
 	    fadeInAction = true;
+
+	    if (!showButtons)
+	    {
+	        buttonGroup.SetActive(false);
+	    }
+	    else
+	    {
+	        buttonGroup.SetActive(true);
+        }
 	}
 	
 	// Update is called once per frame

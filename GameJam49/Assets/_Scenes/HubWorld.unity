@@ -265,7 +265,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.886593
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -500,9 +500,52 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 223604675288677364, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223604675288677364, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224193381697506174, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861681837637542, guid: c349d26405b83354281f7e8c91445979, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 464
+      objectReference: {fileID: 0}
+    - target: {fileID: 224028220704792778, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 224827902470000482, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -68.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224827902470000482, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 95.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589787766411196, guid: c349d26405b83354281f7e8c91445979, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562207528007188, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114091084060169088, guid: c349d26405b83354281f7e8c91445979,
         type: 2}
-      propertyPath: showStats
+      propertyPath: showButtons
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
