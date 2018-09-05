@@ -81,7 +81,7 @@ public class FishingMiniGame : MonoBehaviour {
                 switchSceneName = "HubWorld";
             }
 
-            if (pole.transform.position.y <= -100)
+            if (pole.transform.position.y <= -5)
             {
                 Random.Range(10, 25);
                 onLine = false;
