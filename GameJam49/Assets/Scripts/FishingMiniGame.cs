@@ -10,7 +10,7 @@ public class FishingMiniGame : MonoBehaviour {
     Inventory inv;
     GameObject pole, fish;
     GameObject catchit, caughtit;
-    bool onLine, caught;
+    bool onLine, caught, touching;
     Random rnd = new Random();
     Stopwatch stp = new Stopwatch();
     float startPos;
@@ -32,6 +32,7 @@ public class FishingMiniGame : MonoBehaviour {
         startPos = pole.transform.position.y;
         onLine = false;
         caught = false;
+        touching = false;
     }
 
     void FixedUpdate()
@@ -57,9 +58,15 @@ public class FishingMiniGame : MonoBehaviour {
         {
             pole.transform.Translate(new Vector3(0, -0.02f, 0));
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if ((Input.touchCount >= 1 && !touching) || Input.GetKey(KeyCode.Space))
             {
+                touching = true;
                 pole.transform.Translate(new Vector3(0, 0.25f, 0));
+            }
+
+            if (Input.touchCount == 0)
+            {
+                touching = false;
             }
 
             if (pole.transform.position.y >= 1.8f)
@@ -73,6 +80,6 @@ public class FishingMiniGame : MonoBehaviour {
                 uiController.fadeInAction = true;
                 switchSceneName = "HubWorld";
             }
-        }        
+        }
 	}
 }
