@@ -77,9 +77,22 @@ public class FishingMiniGame : MonoBehaviour {
                 caught = true;
                 catchit.SetActive(false);
                 caughtit.SetActive(true);
-                uiController.fadeInAction = true;
+                uiController.fadeOutAction = true;
                 switchSceneName = "HubWorld";
             }
+
+            if (pole.transform.position.y <= -1)
+            {
+                Random.Range(10, 25);
+                onLine = false;
+                caught = true;
+                catchit.SetActive(false);
+                //caughtit.SetActive(true);
+                uiController.fadeOutAction = true;
+                switchSceneName = "HubWorld";
+            }
+
+
         }
 	}
 }
