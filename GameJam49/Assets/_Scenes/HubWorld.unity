@@ -275,7 +275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELL +30GP
+  m_Text: SELL +50GP
 --- !u!222 &126141190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -465,7 +465,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELL +30GP
+  m_Text: SELL +120GP
 --- !u!222 &173759955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -902,7 +902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY -100GP
+  m_Text: BUY -300GP
 --- !u!222 &445408772
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1129,7 +1129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELL +30GP
+  m_Text: SELL +100GP
 --- !u!222 &542963544
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3197,7 +3197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY -100GP
+  m_Text: BUY -150GP
 --- !u!222 &1307363980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3313,7 +3313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY -100GP
+  m_Text: BUY -250GP
 --- !u!222 &1319039898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3418,7 +3418,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SELL +30GP
+  m_Text: SELL +100GP
 --- !u!222 &1455056299
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3722,7 +3722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY -100GP
+  m_Text: BUY -250GP
 --- !u!222 &1537982363
 CanvasRenderer:
   m_ObjectHideFlags: 0
