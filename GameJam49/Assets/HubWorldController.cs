@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class HubWorldController : MonoBehaviour
 {
     UIController uiController;
-    GameObject shop;
+    GameObject shop, inventory;
 
     string switchSceneName;
     //public Activities tapActivity;
@@ -16,7 +16,9 @@ public class HubWorldController : MonoBehaviour
 	{
 	    uiController = GameObject.Find("Canvas").GetComponent<UIController>();
         shop = GameObject.Find("Shop");
+        inventory = GameObject.Find("Inventory");
         shop.SetActive(false);
+        inventory.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -62,6 +64,17 @@ public class HubWorldController : MonoBehaviour
                 //Add scene on top of this scene
                 uiController.fadeOutAction = true;
                 switchSceneName = "Fishing";
+                break;
+            case Activities.Inventory:
+                //Add scene on top of this scene
+                if (inventory.activeInHierarchy == false)
+                {
+                    inventory.SetActive(true);
+                }
+                else
+                {
+                    inventory.SetActive(false);
+                }
                 break;
             case Activities.Shopping:
                 //Add scene on top of this scene

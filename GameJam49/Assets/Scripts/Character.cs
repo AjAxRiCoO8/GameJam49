@@ -21,6 +21,8 @@ public class Character : MonoBehaviour
     [Range(0, 100)]
     public float agility;
 
+    public bool swordEquiped, shieldEquiped;
+
     public string gp { get; internal set; }
 
     // Inventory ?
