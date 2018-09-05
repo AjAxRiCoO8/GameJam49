@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class HubWorldController : MonoBehaviour
 {
     UIController uiController;
-    private GameObject shop;
+    GameObject shop;
 
     string switchSceneName;
     //public Activities tapActivity;
@@ -30,7 +30,7 @@ public class HubWorldController : MonoBehaviour
     void FixedUpdate()
     {
         // Checks if fader animation has completed and player clicked on a button
-        if (!uiController.fadeInAction && switchSceneName != null)
+        if (!uiController.fading && switchSceneName != null)
         {
             SceneManager.LoadScene(switchSceneName);
         }
@@ -49,7 +49,7 @@ public class HubWorldController : MonoBehaviour
         {
             case Activities.Fighting:
                 //Add scene on top of this scene
-                uiController.fadeInAction = true;
+                //uiController.fadeInAction = true;
                 //switchSceneName = "Fightscene";
                 break;
             case Activities.Training:

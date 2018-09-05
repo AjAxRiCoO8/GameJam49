@@ -11,7 +11,7 @@ public class UIController : MonoBehaviour
 
     //Fader
     Image blackFade;
-    public  bool fadeOutAction, fadeInAction;
+    public  bool fadeOutAction, fadeInAction, fading;
     [SerializeField]
     bool setAlpha;
     [SerializeField]
@@ -25,6 +25,7 @@ public class UIController : MonoBehaviour
 	    characterController = GameObject.Find("Player").GetComponent<Character>();
 	    blackFade = GameObject.Find("BlackFade").GetComponent<Image>();
 	    blackFade.enabled = false;
+	    fadeInAction = true;
 	}
 	
 	// Update is called once per frame
@@ -70,12 +71,14 @@ public class UIController : MonoBehaviour
             currentAlpha = 1;
             setAlpha = true;
             blackFade.enabled = true;
+            fading = true;
         }
         else if (!setAlpha && !fadeIn)
         {
             currentAlpha = 0;
             setAlpha = true;
             blackFade.enabled = true;
+            fading = true;
         }
 
 
@@ -98,11 +101,13 @@ public class UIController : MonoBehaviour
         {
             setAlpha = false;
             fadeInAction = false;
+            fading = false;
         }
         else if (currentAlpha >= 1) 
         {
             setAlpha = false;
             fadeOutAction = false;
+            fading = false;
         }
     }
 }
