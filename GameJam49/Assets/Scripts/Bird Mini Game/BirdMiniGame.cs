@@ -74,7 +74,7 @@ public class BirdMiniGame : MonoBehaviour
         var decider = Random.Range(0, 2);
 
         Vector3 randomPostion = decider == 0 ? new Vector3(0, Random.Range(Screen.height/3,Screen.height-100), 0)
-            : new Vector3(Screen.width, Random.Range(Screen.height / 3, Screen.height - 100), 0);
+            : new Vector3(Screen.width, Random.Range(Screen.height / 4, Screen.height - 200), 0);
         GameObject bird = Instantiate(BirdPrefab, randomPostion, new Quaternion(0, 0, 0, 0), canvas.transform);
         bird.AddComponent<DestoryAfterAWhile>(); //make sure this object doesnt remain
         var birdScript = bird.GetComponent<Bird>();
@@ -128,8 +128,8 @@ public class BirdMiniGame : MonoBehaviour
 
     public void ManageUI()
     {
-        BulletCountDisplay.text = string.Format("Bullets: {0}", BulletCount);
-        BirdDisplay.text = string.Format("Birds Caught: {0}", HitBirds);
+        BulletCountDisplay.text = string.Format("Shots: {0}", BulletCount);
+        BirdDisplay.text = string.Format(": {0}", HitBirds);
     }
     #endregion public methods
 }
