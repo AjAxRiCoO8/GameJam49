@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CurrentGold
   - ShopScreen
+  - FishingPole
+  - Fish
+  - CaughtText
+  - CatchItText
   layers:
   - Default
   - TransparentFX
