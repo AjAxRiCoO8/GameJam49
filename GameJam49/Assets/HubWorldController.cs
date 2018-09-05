@@ -86,7 +86,11 @@ public class HubWorldController : MonoBehaviour
                 {
                     shop.SetActive(false);
                 }
-
+                break;
+            case Activities.BirdCatching:
+                //Add scene on top of this scene
+                uiController.fadeOutAction = true;
+                switchSceneName = "MiniGames BirdTest";
                 break;
         }
         // Reset for the next tap
