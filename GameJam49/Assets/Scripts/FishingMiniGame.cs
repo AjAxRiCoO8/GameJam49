@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FishingMiniGame : MonoBehaviour {
+    Character playChar;
+    Inventory inv;
     GameObject pole, fish;
     GameObject catchit, caughtit;
     bool onLine, caught;
     Random rnd = new Random();
     Stopwatch stp = new Stopwatch();
     float startPos;
+    UIController uiController;
+    string switchSceneName;
 
     // Use this for initialization
     void Start () {
+        uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+        playChar = GameObject.Find("Player").GetComponent<Character>();
+        inv = GameObject.Find("Player").GetComponent<Inventory>();
         pole = GameObject.FindGameObjectWithTag("FishingPole");
         fish = GameObject.FindGameObjectWithTag("Fish");
         catchit = GameObject.FindGameObjectWithTag("CatchItText");
@@ -25,9 +33,18 @@ public class FishingMiniGame : MonoBehaviour {
         onLine = false;
         caught = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void FixedUpdate()
+    {
+        // Checks if fader animation has completed and player clicked on a button
+        if (!uiController.fadeInAction && switchSceneName != null)
+        {
+            SceneManager.LoadScene(switchSceneName);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (Random.Range(0,350) == 1 && !onLine && !caught)
         {
             catchit.SetActive(true);
@@ -47,12 +64,14 @@ public class FishingMiniGame : MonoBehaviour {
 
             if (pole.transform.position.y >= 1.8f)
             {
-                // GIVE PLAYER RANDOM FISH
+                inv.fish++;
                 Random.Range(10,25);
                 onLine = false;
                 caught = true;
                 catchit.SetActive(false);
                 caughtit.SetActive(true);
+                uiController.fadeInAction = true;
+                switchSceneName = "HubWorld";
             }
         }        
 	}

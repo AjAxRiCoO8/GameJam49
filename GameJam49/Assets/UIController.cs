@@ -50,9 +50,12 @@ public class UIController : MonoBehaviour
 
     void UpdateText()
     {
-        hpText.text = "HP: " + Mathf.FloorToInt(characterController.health);
-        staText.text = "Sta: " + Mathf.FloorToInt(characterController.stamina);
-        strText.text = "Str: " + Mathf.FloorToInt(characterController.strength);
+        if(hpText != null)
+            hpText.text = "HP: " + Mathf.FloorToInt(characterController.health);
+        if(staText != null)
+            staText.text = "Sta: " + Mathf.FloorToInt(characterController.stamina);
+        if(strText != null)
+            strText.text = "Str: " + Mathf.FloorToInt(characterController.strength);
     }
 
     void GetStats()

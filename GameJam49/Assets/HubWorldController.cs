@@ -60,6 +60,8 @@ public class HubWorldController : MonoBehaviour
                 break;
             case Activities.Fishing:
                 //Add scene on top of this scene
+                uiController.fadeInAction = true;
+                switchSceneName = "Fishing";
                 break;
             case Activities.Shopping:
                 //Add scene on top of this scene
