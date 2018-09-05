@@ -10,7 +10,7 @@ public abstract class MiniGameRules : MonoBehaviour {
 
     protected bool miniGameHasStarted = false;
 
-    float score;
+    public float score;
 
     public abstract void GenerateMiniGame(GameManager manager);
 
