@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 enum FightingOption
 {
@@ -13,17 +14,63 @@ public class FightingManager : MonoBehaviour {
     public GameObject canvas;
 
     [SerializeField]
-    List<GameObject> attackMiniGames;
+    List<GameObject> attackMiniGames = new List<GameObject>();
 
-    List<GameObject> defenseMiniGames;
+    [SerializeField]
+    List<GameObject> defenseMiniGames = new List<GameObject>();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    GameObject AttackButton;
+
+    [SerializeField]
+    GameObject DefendButton;
+
+	public void StartAttackMiniGame()
+    {
+        if (attackMiniGames.Count == 0)
+        {
+            return;
+        }
+
+        int randomMiniGame = Random.Range(0, attackMiniGames.Count);
+
+        GameObject miniGame = Instantiate(attackMiniGames[randomMiniGame]);
+
+        miniGame.GetComponent<MiniGame>().ShowMiniGame(GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>());
+
+        HideUI();
+    }
+
+    public void StartDefendMiniGame()
+    {
+        if (defenseMiniGames.Count == 0)
+        {
+            return;
+        }
+
+        int randomMiniGame = Random.Range(0, attackMiniGames.Count);
+
+        GameObject miniGame = Instantiate(attackMiniGames[randomMiniGame]);
+
+        miniGame.GetComponent<MiniGame>().ShowMiniGame(GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>());
+
+        HideUI();
+    }
+
+    public void ProcessScore(float score)
+    {
+        Debug.Log("Score: " + score);
+    }
+
+    public void ShowUI()
+    {
+        AttackButton.SetActive(true);
+        DefendButton.SetActive(true);
+    }
+
+    public void HideUI()
+    {
+        AttackButton.SetActive(false);
+        DefendButton.SetActive(false);
+    }
 }

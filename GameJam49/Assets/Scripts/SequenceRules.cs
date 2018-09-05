@@ -10,11 +10,8 @@ public class SequenceRules : MiniGameRules
 
     List<GameObject> buttons = new List<GameObject>();
 
-    [SerializeField]
-    Vector2Int verticalBoundaries;
-
-    [SerializeField]
-    Vector2Int horizontalBoundaries;
+    Vector2 horizontalBoundaries;
+    Vector2 verticalBoundaries;
 
     [SerializeField]
     [Range(10, 100)]
@@ -22,11 +19,13 @@ public class SequenceRules : MiniGameRules
 
     [SerializeField]
     [Range(0, 10)]
-    float baseValue = 5;
+    int baseValue = 5;
 
     int currentNumberShouldBePressed = 1;
 
     float timer = 0;
+
+    GameManager manager;
 
     private void Update()
     {
@@ -41,13 +40,18 @@ public class SequenceRules : MiniGameRules
     // The amount of buttons depends on the agility of the player.
     public override void GenerateMiniGame(GameManager manager)
     {
+        this.manager = manager;
+
+        RectTransform objectRectTransform = miniGame.canvas.transform.parent.GetComponent<RectTransform>();
+        horizontalBoundaries = new Vector2(objectRectTransform.rect.width / 2, objectRectTransform.rect.width);
+        verticalBoundaries = new Vector2(0, objectRectTransform.rect.height);
+
         List<Vector2> usedPositions = new List<Vector2>();
 
         for (int i = 0; i < (baseValue + manager.Player.strength); i++)
         {
-            // TODO: Generate a number on a random location, not overlapping any other buttons.
-            int horizontalPos = Random.Range(horizontalBoundaries.x, horizontalBoundaries.y - 50 - (int)buttonSpread) - horizontalBoundaries.y / 2;
-            int verticalPos = Random.Range(verticalBoundaries.x, verticalBoundaries.y - 50 - (int)buttonSpread) - verticalBoundaries.y /2;
+            float horizontalPos = Random.Range(horizontalBoundaries.x, horizontalBoundaries.y - 50 - buttonSpread) - horizontalBoundaries.y / 2;
+            float verticalPos = Random.Range(verticalBoundaries.x, verticalBoundaries.y - 50 - buttonSpread) - (verticalBoundaries.y - 50 - buttonSpread) / 2;
 
             bool used = false;
 
@@ -75,6 +79,7 @@ public class SequenceRules : MiniGameRules
             button.GetComponent<Button>().onClick.AddListener(delegate { OnButtonPress(button, button.GetComponentInChildren<Text>().text); } );
 
             buttons.Add(button);
+            miniGameComponents.Add(button);
              
         }
     }
@@ -93,16 +98,23 @@ public class SequenceRules : MiniGameRules
         {
             // Wrong Button
             Debug.Log("Wrong Button");
-            miniGame.HideMiniGame();
             miniGameHasStarted = false;
+            miniGame.HideMiniGame(manager);
+            return;
         }
 
         if (currentNumberShouldBePressed == buttons.Count + 1)
         {
             // Did all buttons
-            miniGame.HideMiniGame();
             miniGameHasStarted = false;
+            miniGame.HideMiniGame(manager);
+            return;
         }
+    }
+
+    public override float GetScore()
+    {
+        return currentNumberShouldBePressed - 1 / timer + manager.Player.strength;
     }
 
 

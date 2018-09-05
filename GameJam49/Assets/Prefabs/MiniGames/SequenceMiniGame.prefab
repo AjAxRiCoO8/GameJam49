@@ -55,7 +55,7 @@ MonoBehaviour:
   miniGame: {fileID: 0}
   sequenceButton: {fileID: 1253070760213924, guid: 77896434dc03f9340883695ef49e85e4,
     type: 2}
-  verticalBoundaries: {x: 0, y: 1080}
+  verticalBoundaries: {x: 0, y: 670}
   horizontalBoundaries: {x: 960, y: 1920}
   buttonSpread: 20
   baseValue: 5

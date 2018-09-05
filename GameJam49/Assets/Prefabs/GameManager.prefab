@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114250324069252426}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,8 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 114892876750278850, guid: 8396c43cf7aa10142b129bb4e158fd64, type: 2}
-  fightingManager: {fileID: 114818744584923140, guid: 49d5b26dcba3c994cbb3c73cc82d437d,
-    type: 2}
+  fightingManager: {fileID: 0}
 --- !u!114 &114250324069252426
 MonoBehaviour:
   m_ObjectHideFlags: 1

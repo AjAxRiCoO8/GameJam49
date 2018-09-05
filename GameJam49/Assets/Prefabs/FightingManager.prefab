@@ -54,3 +54,5 @@ MonoBehaviour:
   canvas: {fileID: 0}
   attackMiniGames:
   - {fileID: 1435242898309678, guid: bcabec2faf8b50c49b1cd32ff0ab4704, type: 2}
+  defenseMiniGames:
+  - {fileID: 1435242898309678, guid: bcabec2faf8b50c49b1cd32ff0ab4704, type: 2}

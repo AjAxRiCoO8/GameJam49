@@ -25,4 +25,9 @@ public class GameManager: MonoBehaviour {
     {
         get { return player; }
     }
+
+    public FightingManager FightingManager
+    {
+        get { return fightingManager; }
+    }
 }

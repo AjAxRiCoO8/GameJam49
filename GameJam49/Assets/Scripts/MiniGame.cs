@@ -11,9 +11,11 @@ public class MiniGame : MonoBehaviour {
     [SerializeField]
     MiniGameRules rules;
 
-    private void Start()
+    private void Awake()
     {
         rules.miniGame = this;
+
+        canvas = GameObject.FindGameObjectWithTag("MiniGameCanvas");
     }
 
     // Called when the minigame starts
@@ -24,15 +26,26 @@ public class MiniGame : MonoBehaviour {
     
         rules.GenerateMiniGame(manager);
 
+        rules.StartMiniGame();
+
 
     }
 
     // Called when the minigame is over.
     // Is responsible for hiding the minigame window.
-    public void HideMiniGame()
+    public void HideMiniGame(GameManager manager)
     {
         float score = rules.EndMiniGame();
 
+        manager.FightingManager.ProcessScore(score);
+
         canvas.SetActive(false);
+
+        for(int i = 0; i < rules.miniGameComponents.Count; i++)
+        {
+            Destroy(rules.miniGameComponents[i]);
+        }
+
+        manager.FightingManager.ShowUI();
     }
 }
