@@ -31,14 +31,17 @@ public class UIController : MonoBehaviour
         blackFade.enabled = false;
 	    fadeInAction = true;
 
-	    if (!showButtons)
+	    if (buttonGroup)
 	    {
-	        buttonGroup.SetActive(false);
+	        if (!showButtons)
+	        {
+	            buttonGroup.SetActive(false);
+	        }
+	        else
+	        {
+	            buttonGroup.SetActive(true);
+	        }
 	    }
-	    else
-	    {
-	        buttonGroup.SetActive(true);
-        }
 	}
 	
 	// Update is called once per frame
