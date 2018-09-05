@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8934161}
+  fightingManager: {fileID: 0}
 --- !u!4 &1318933298
 Transform:
   m_ObjectHideFlags: 0
@@ -499,6 +500,11 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 114091084060169088, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: showStats
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c349d26405b83354281f7e8c91445979, type: 2}
   m_IsPrefabAsset: 0

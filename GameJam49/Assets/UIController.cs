@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-
+    public bool showStats;
+    public bool showButtons;
     public Text hpText,staText,strText;
     Character characterController;
 
@@ -51,12 +52,12 @@ public class UIController : MonoBehaviour
 
     void UpdateText()
     {
-        if(hpText != null)
+        if (showStats)
+        {
             hpText.text = "HP: " + Mathf.FloorToInt(characterController.health);
-        if(staText != null)
             staText.text = "Sta: " + Mathf.FloorToInt(characterController.stamina);
-        if(strText != null)
             strText.text = "Str: " + Mathf.FloorToInt(characterController.strength);
+        }
     }
 
     void GetStats()

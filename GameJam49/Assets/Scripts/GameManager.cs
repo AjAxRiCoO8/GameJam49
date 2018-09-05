@@ -8,6 +8,9 @@ public class GameManager: MonoBehaviour {
     [SerializeField]
     Character player;
 
+    [SerializeField]
+    FightingManager fightingManager;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,4 +20,14 @@ public class GameManager: MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public Character Player
+    {
+        get { return player; }
+    }
+
+    public FightingManager FightingManager
+    {
+        get { return fightingManager; }
+    }
 }
