@@ -69,7 +69,7 @@ public class FishingMiniGame : MonoBehaviour {
                 touching = false;
             }
 
-            if (pole.transform.position.y >= 1.8f)
+            if (pole.transform.position.y >= 10)//1.8f)
             {
                 inv.fish++;
                 Random.Range(10,25);
@@ -81,7 +81,7 @@ public class FishingMiniGame : MonoBehaviour {
                 switchSceneName = "HubWorld";
             }
 
-            if (pole.transform.position.y <= -1)
+            if (pole.transform.position.y <= -100)
             {
                 Random.Range(10, 25);
                 onLine = false;
