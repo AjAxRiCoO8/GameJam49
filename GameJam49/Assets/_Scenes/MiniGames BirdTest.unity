@@ -261,6 +261,16 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114839152362375284, guid: 62cbdf9c39ba53a45a9e9ae8c234a88d,
+        type: 2}
+      propertyPath: ReturnTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114839152362375284, guid: 62cbdf9c39ba53a45a9e9ae8c234a88d,
+        type: 2}
+      propertyPath: FinishTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62cbdf9c39ba53a45a9e9ae8c234a88d, type: 2}
   m_IsPrefabAsset: 0
@@ -398,3 +408,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1585371285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1393283943005496, guid: 62cbdf9c39ba53a45a9e9ae8c234a88d,
+    type: 2}
+  m_PrefabInternal: {fileID: 496940603}
+--- !u!114 &1585371290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585371285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56ced03537099a46bd9203f074fa088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGame: {fileID: 0}
+  miniGameComponents: []
+  miniGame: {fileID: 0}
+  score: 0

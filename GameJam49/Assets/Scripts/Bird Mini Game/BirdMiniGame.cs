@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BirdMiniGame : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class BirdMiniGame : MonoBehaviour
 
     private bool GameFinshed;
 
-    public int Delay = 1, FinishTime = 4;
+    public int Delay = 1, FinishTime = 1, ReturnTime = 2;
     public Canvas canvas;
     public GameObject BirdPrefab;
 
@@ -60,7 +61,7 @@ public class BirdMiniGame : MonoBehaviour
         {
             GameObject TimerObject = new GameObject("TimerObject", typeof(TimerEvent));
             TimerEvent Timer = TimerObject.GetComponent<TimerEvent>();
-            Timer.InvokableEvent += CreateBird;
+            Timer.InvokableEvent += EndMiniGame;
             Timer.StartTimer(FinishTime);
             TimerObject.AddComponent<DestoryAfterAWhile>(); //make sure this object doesnt remain
         }
@@ -87,7 +88,7 @@ public class BirdMiniGame : MonoBehaviour
 
     public void Shoot()
     {
-        if (BulletCount != 0)
+        if (BulletCount >= 1)
             BulletCount--;
         else
             EndMiniGame();
@@ -109,8 +110,20 @@ public class BirdMiniGame : MonoBehaviour
     {
         FinishText.gameObject.SetActive(true);
         GameFinshed = true;
-        GetComponent<SequenceRules>().score = HitBirds;
-        GetComponent<SequenceRules>().EndMiniGame();
+        GetComponent<BirdRules>().score = HitBirds;
+        GetComponent<BirdRules>().EndMiniGame();
+
+        //return to main scene
+        GameObject TimerObject = new GameObject("TimerObject", typeof(TimerEvent));
+        TimerEvent Timer = TimerObject.GetComponent<TimerEvent>();
+        Timer.InvokableEvent += ReturnToMain;
+        Timer.StartTimer(ReturnTime);
+        TimerObject.AddComponent<DestoryAfterAWhile>(); //make sure this object doesnt remain
+    }
+
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene("HubWorld");
     }
 
     public void ManageUI()
