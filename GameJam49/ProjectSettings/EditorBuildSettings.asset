@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/GameOverScene.unity
     guid: b5eed0d30d76493488ff15f8670a381d
+  - enabled: 1
+    path: Assets/_Scenes/MiniGames BirdTest.unity
+    guid: 5fc325348a83a1b4dae891394d19d67d
   m_configObjects: {}
