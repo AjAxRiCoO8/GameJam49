@@ -52,7 +52,7 @@ public class HubWorldController : MonoBehaviour
             case Activities.Fighting:
                 //Add scene on top of this scene
                 uiController.fadeOutAction = true;
-                switchSceneName = "Fighting";
+                switchSceneName = "Enemies";
                 break;
             case Activities.Training:
                 //Add scene on top of this scene
