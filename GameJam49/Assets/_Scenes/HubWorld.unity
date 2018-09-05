@@ -879,7 +879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &671317505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1697,7 +1697,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fbaff20e0a67c3e4086983c3df9eabab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 634986fc3c374a3439c55fe34319dbf2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2496,6 +2496,51 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114398082654596250, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 114562207528007188, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbde4c8c8d0ea094198f09df2788b465,
+        type: 3}
+    - target: {fileID: 1906425567767674, guid: c349d26405b83354281f7e8c91445979, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426352883880226, guid: c349d26405b83354281f7e8c91445979, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586611043655188, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d425765fcb561149887c1d08a3495c8,
+        type: 3}
+    - target: {fileID: 1602064559672534, guid: c349d26405b83354281f7e8c91445979, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114959771432320140, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 89b6b6d91bf2375478b9078bd8ac8c2e,
+        type: 3}
+    - target: {fileID: 1164545783056956, guid: c349d26405b83354281f7e8c91445979, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114210823467413254, guid: c349d26405b83354281f7e8c91445979,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6190ca92a8fc39b4c94a612fbb899395,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c349d26405b83354281f7e8c91445979, type: 2}
   m_IsPrefabAsset: 0
