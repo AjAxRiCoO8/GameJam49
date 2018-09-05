@@ -25,7 +25,18 @@ public class FightingManager : MonoBehaviour {
     [SerializeField]
     GameObject DefendButton;
 
-	public void StartAttackMiniGame()
+    [SerializeField]
+    Text PlayerHealth;
+
+    [SerializeField]
+    Text EnemyHealth;
+
+    [SerializeField]
+    List<GameObject> enemies;
+
+    Enemy currentEnemy;
+
+    public void StartAttackMiniGame()
     {
         if (attackMiniGames.Count == 0)
         {
@@ -60,6 +71,31 @@ public class FightingManager : MonoBehaviour {
     public void ProcessScore(float score)
     {
         Debug.Log("Score: " + score);
+
+        float randomScoreForEnemy = Random.Range(currentEnemy.possibleScore.x, currentEnemy.possibleScore.y);
+
+        if (score >= randomScoreForEnemy)
+        {
+            currentEnemy.health -= 5;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Player.health -= 5;
+        }
+
+        UpdateUI();
+
+        if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Player.health <= 0)
+        {
+            // Player is dead
+            return;
+        }
+
+        if (currentEnemy.health <= 0)
+        {
+            // Enemy is Dead
+            return;
+        }
     }
 
     public void ShowUI()
@@ -72,5 +108,23 @@ public class FightingManager : MonoBehaviour {
     {
         AttackButton.SetActive(false);
         DefendButton.SetActive(false);
+    }
+
+    public void UpdateUI()
+    {
+        PlayerHealth.text = "Player Health: " + GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Player.health;
+        EnemyHealth.text = "Enemy Health: " + currentEnemy.health;
+    }
+
+    public void GetNextEnemy()
+    {
+        if (enemies.Count > 0)
+        {
+            GameObject enemy = Instantiate(enemies[0]);
+            currentEnemy = enemy.GetComponent<Enemy>();
+            enemies.RemoveAt(0);
+
+            UpdateUI();
+        }
     }
 }

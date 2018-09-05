@@ -22,7 +22,6 @@ public class MiniGame : MonoBehaviour {
     // Is responsible for showing the minigame window.
     public void ShowMiniGame(GameManager manager)
     {
-        canvas.SetActive(true);
     
         rules.GenerateMiniGame(manager);
 
@@ -38,8 +37,6 @@ public class MiniGame : MonoBehaviour {
         float score = rules.EndMiniGame();
 
         manager.FightingManager.ProcessScore(score);
-
-        canvas.SetActive(false);
 
         for(int i = 0; i < rules.miniGameComponents.Count; i++)
         {
