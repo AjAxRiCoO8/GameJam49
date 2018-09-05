@@ -21,6 +21,9 @@ public class SequenceRules : MiniGameRules
     [Range(0, 10)]
     int baseValue = 5;
 
+    [SerializeField]
+    int buttonSize = 100;
+
     int currentNumberShouldBePressed = 1;
 
     float timer = 0;
@@ -50,15 +53,15 @@ public class SequenceRules : MiniGameRules
 
         for (int i = 0; i < (baseValue + manager.Player.strength); i++)
         {
-            float horizontalPos = Random.Range(horizontalBoundaries.x, horizontalBoundaries.y - 50 - buttonSpread) - horizontalBoundaries.y / 2;
-            float verticalPos = Random.Range(verticalBoundaries.x, verticalBoundaries.y - 50 - buttonSpread) - (verticalBoundaries.y - 50 - buttonSpread) / 2;
+            float horizontalPos = Random.Range(horizontalBoundaries.x, horizontalBoundaries.y - buttonSize - buttonSpread) - horizontalBoundaries.y / 2;
+            float verticalPos = Random.Range(verticalBoundaries.x, verticalBoundaries.y - buttonSize - buttonSpread) - (verticalBoundaries.y - buttonSize - buttonSpread) / 2;
 
             bool used = false;
 
             foreach (var pos in usedPositions)
             {
-                if ((horizontalPos + buttonSpread >= pos.x && horizontalPos - buttonSpread <= pos.x + 50)
-                    || (verticalPos + buttonSpread >= pos.y && verticalPos - buttonSpread <= pos.y + 50))
+                if ((horizontalPos + buttonSpread >= pos.x && horizontalPos - buttonSpread <= pos.x + buttonSize)
+                    || (verticalPos + buttonSpread >= pos.y && verticalPos - buttonSpread <= pos.y + buttonSize))
                 {
                     i--;
                     used = true;
