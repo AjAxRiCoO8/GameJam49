@@ -56,6 +56,8 @@ public class HubWorldController : MonoBehaviour
                 break;
             case Activities.Training:
                 //Add scene on top of this scene
+                uiController.fadeOutAction = true;
+                switchSceneName = "Training";
                 break;
             case Activities.Exploring:
                 //Add scene on top of this scene
