@@ -54,4 +54,7 @@ MonoBehaviour:
   health: 35.5
   stamina: 32.6
   strength: 21.2
-  possibleScore: {x: 0, y: 2}
+  agility: 0
+  swordEquiped: 0
+  shieldEquiped: 0
+  possibleScore: {x: 0, y: 6}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 enum FightingOption
 {
@@ -88,12 +89,14 @@ public class FightingManager : MonoBehaviour {
         if (GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Player.health <= 0)
         {
             // Player is dead
+            SceneManager.LoadScene("GameOverScene");
             return;
         }
 
         if (currentEnemy.health <= 0)
         {
             // Enemy is Dead
+            SceneManager.LoadScene("HubWorld");
             return;
         }
     }
