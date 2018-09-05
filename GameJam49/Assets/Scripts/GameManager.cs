@@ -11,9 +11,10 @@ public class GameManager: MonoBehaviour {
     [SerializeField]
     FightingManager fightingManager;
 
+
 	// Use this for initialization
 	void Start () {
-		
+        OnSceneChange("Fighting");
 	}
 	
 	// Update is called once per frame
@@ -24,5 +25,18 @@ public class GameManager: MonoBehaviour {
     public Character Player
     {
         get { return player; }
+    }
+
+    public FightingManager FightingManager
+    {
+        get { return fightingManager; }
+    }
+
+    public void OnSceneChange(string scene)
+    {
+        if (scene == "Fighting")
+        {
+            fightingManager.GetNextEnemy();
+        }
     }
 }

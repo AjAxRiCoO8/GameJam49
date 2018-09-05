@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour
+{
 
     [SerializeField]
     [Range(0, 100)]
-    float health;
-    
+    public float health;
+
     [SerializeField]
     [Range(0, 100)]
     public float stamina;
@@ -16,15 +17,31 @@ public class Character : MonoBehaviour {
     [Range(0, 100)]
     public float strength;
 
+    [SerializeField]
+    [Range(0, 100)]
+    public float agility;
+
+    public bool swordEquiped, shieldEquiped;
+
+    public string gp { get; internal set; }
+
     // Inventory ?
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        health = 70 + (strength * 10);
+        stamina = 20 + (agility * 10);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

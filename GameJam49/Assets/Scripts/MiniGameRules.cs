@@ -8,10 +8,14 @@ public abstract class MiniGameRules : MonoBehaviour {
     [HideInInspector]
     public MiniGame miniGame;
 
+    [HideInInspector]
+    public List<GameObject> miniGameComponents = new List<GameObject>();
+
     protected bool miniGameHasStarted = false;
 
-    public float score;
+    float score = 0;
 
+    [ContextMenu("Generate MiniGame")]
     public abstract void GenerateMiniGame(GameManager manager);
 
     public void StartMiniGame()
@@ -22,7 +26,9 @@ public abstract class MiniGameRules : MonoBehaviour {
     public float EndMiniGame()
     {
         miniGameHasStarted = false;
-        return score;
+        return GetScore();
     }
+
+    public abstract float GetScore();
 
 }
