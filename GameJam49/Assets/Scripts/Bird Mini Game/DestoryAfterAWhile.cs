@@ -23,6 +23,9 @@ public class DestoryAfterAWhile : MonoBehaviour
     /// </summary>
     private void DestroyEvents()
     {
+        var fight = FindObjectOfType<FightingManager>();
+        if (fight != null)
+            fight.ShowUI();
             Destroy(this.gameObject);
     }
 }

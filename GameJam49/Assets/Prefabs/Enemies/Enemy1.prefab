@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb24456f61c48744282ac46b3b265143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 35.5
+  health: 30
   stamina: 32.6
   strength: 21.2
   agility: 0

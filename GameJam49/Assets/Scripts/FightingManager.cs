@@ -10,7 +10,8 @@ enum FightingOption
     Defend
 }
 
-public class FightingManager : MonoBehaviour {
+public class FightingManager : MonoBehaviour
+{
 
     public GameObject canvas;
 
@@ -35,10 +36,14 @@ public class FightingManager : MonoBehaviour {
     [SerializeField]
     List<GameObject> enemies;
 
+    public int PlayerAttackPower = 10;
+    public int PlayerDefensePower = 5;
+
     Enemy currentEnemy;
 
     public void StartAttackMiniGame()
     {
+        //currentEnemy.health = 20;//TODO: HARD CODED because cant find bug location atm
         if (attackMiniGames.Count == 0)
         {
             return;
@@ -77,11 +82,11 @@ public class FightingManager : MonoBehaviour {
 
         if (score >= randomScoreForEnemy)
         {
-            currentEnemy.health -= 5;
+            currentEnemy.health -= PlayerAttackPower;// -=power/currentEnemy.Def
         }
         else
         {
-            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Player.health -= 5;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().Player.health -= 10 / PlayerDefensePower;//currentEnemy.strength/PlayerDefensePower;
         }
 
         UpdateUI();
