@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Fishing.unity
     guid: 548cdadd5b7ae454bb35836825548a97
+  - enabled: 1
+    path: Assets/_Scenes/Fighting.unity
+    guid: dd4726b4a4a2f8c4e99a56ee1647a20e
   m_configObjects: {}

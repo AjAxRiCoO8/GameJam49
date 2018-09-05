@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-
+    public bool showStats;
+    public bool showButtons;
     public Text hpText,staText,strText;
     Character characterController;
 
     //Fader
     Image blackFade;
-    public  bool fadeOutAction, fadeInAction;
+    public  bool fadeOutAction, fadeInAction, fading;
     [SerializeField]
     bool setAlpha;
     [SerializeField]
@@ -25,6 +26,7 @@ public class UIController : MonoBehaviour
 	    characterController = GameObject.Find("Player").GetComponent<Character>();
 	    blackFade = GameObject.Find("BlackFade").GetComponent<Image>();
 	    blackFade.enabled = false;
+	    fadeInAction = true;
 	}
 	
 	// Update is called once per frame
@@ -50,12 +52,12 @@ public class UIController : MonoBehaviour
 
     void UpdateText()
     {
-        if(hpText != null)
+        if (showStats)
+        {
             hpText.text = "HP: " + Mathf.FloorToInt(characterController.health);
-        if(staText != null)
             staText.text = "Sta: " + Mathf.FloorToInt(characterController.stamina);
-        if(strText != null)
             strText.text = "Str: " + Mathf.FloorToInt(characterController.strength);
+        }
     }
 
     void GetStats()
@@ -70,12 +72,14 @@ public class UIController : MonoBehaviour
             currentAlpha = 1;
             setAlpha = true;
             blackFade.enabled = true;
+            fading = true;
         }
         else if (!setAlpha && !fadeIn)
         {
             currentAlpha = 0;
             setAlpha = true;
             blackFade.enabled = true;
+            fading = true;
         }
 
 
@@ -98,11 +102,13 @@ public class UIController : MonoBehaviour
         {
             setAlpha = false;
             fadeInAction = false;
+            fading = false;
         }
         else if (currentAlpha >= 1) 
         {
             setAlpha = false;
             fadeOutAction = false;
+            fading = false;
         }
     }
 }
