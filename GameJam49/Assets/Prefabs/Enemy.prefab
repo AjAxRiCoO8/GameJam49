@@ -9,48 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1564261620178556}
+  m_RootGameObject: {fileID: 1613718588250894}
   m_IsPrefabAsset: 1
---- !u!1 &1564261620178556
+--- !u!1 &1613718588250894
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4777021124630304}
-  - component: {fileID: 114892876750278850}
+  - component: {fileID: 4874937555230166}
+  - component: {fileID: 114916679099640786}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4777021124630304
+--- !u!4 &4874937555230166
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1564261620178556}
+  m_GameObject: {fileID: 1613718588250894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 427.837, y: 248.56299, z: 7.9138665}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114892876750278850
+--- !u!114 &114916679099640786
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1564261620178556}
+  m_GameObject: {fileID: 1613718588250894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58fc8dc0d3a5b124bbef926dcdf3bca8, type: 3}
+  m_Script: {fileID: 11500000, guid: fb24456f61c48744282ac46b3b265143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 0
   stamina: 0
   strength: 0
+  possibleScore: {x: 0, y: 10}

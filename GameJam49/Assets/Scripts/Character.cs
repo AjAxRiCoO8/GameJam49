@@ -6,7 +6,7 @@ public class Character : MonoBehaviour {
 
     [SerializeField]
     [Range(0, 100)]
-    float health;
+    public float health;
     
     [SerializeField]
     [Range(0, 100)]
